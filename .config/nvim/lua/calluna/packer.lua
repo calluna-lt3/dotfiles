@@ -33,7 +33,10 @@ return require('packer').startup(function(use)
   }
 
   -- other
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate' -- :TSUpdate sometimes doesnt run on PackerSync, run manually
+  }
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
