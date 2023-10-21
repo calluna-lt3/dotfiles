@@ -1,0 +1,17 @@
+#!/bin/bash
+if [[ $# != 1 ]]; then
+    echo "$# arguments intead of 1"
+    exit 1
+fi
+
+dir=$1
+filename="$(echo "$RANDOM" | md5sum | cut -d ' ' -f1 | tr -d '\n')"
+echo -n "zip password? [Y/n] "
+read password 
+password="$(echo "$password" | tr '[:upper:]' '[:lower:]')" 
+
+zip -r /tmp/$filename $dir 
+if [[ "$password" == "y" ]]; then
+    zipcloak /tmp/$filename.zip
+fi
+sfile /tmp/$filename.zip
