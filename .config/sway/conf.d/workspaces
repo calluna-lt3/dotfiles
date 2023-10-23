@@ -4,6 +4,7 @@
 assign [app_id="kitty"] workspace number 1
 assign [class="obs"] workspace number 1
 assign [class="firefox"] workspace number 2
+assign [app_id="firefox"] workspace number 2
 assign [class="discord"] workspace number 3
 assign [class="Mumble"] workspace number 3
 assign [class="steam"] workspace number 4
