@@ -13,8 +13,9 @@ set $menu bemenu-run -i | xargs swaymsg exec --
 #
 ## Custom
 bindsym $mod+shift+p exec grim -g "$(slurp)"
-bindsym $mod+p exec ssc
-bindsym $mod+t exec swaybordertoggle
+bindsym $mod+p exec ~/.scripts/ssc
+bindsym $mod+t exec ~/.scripts/swaybordertoggle ## i dont know why my custom scripts need to have direct path but this works for temp fix
+
 
 ## Sway commands
 bindsym $mod+Shift+c reload
