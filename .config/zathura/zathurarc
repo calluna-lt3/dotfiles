@@ -3,5 +3,6 @@ set recolor true
 set recolor-darkcolor "#bbbbbb"
 set recolor-lightcolor "#191919"
 set default-bg "#3d3839"
+# this isnt the same color as the vim bar :3 i hate myself
 set inputbar-bg "#191919"
 set statusbar-bg "#3d3839"
