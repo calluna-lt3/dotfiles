@@ -1,15 +1,23 @@
 ### Workspaces ###
 #
 ## Assignment ##
-assign [class="obs"] workspace number 1
+# note: workspace 1 used for kitty, but want to be able to open a terminal
+# anywhere easily so it doesnt get auto-assigned ^-^
+
 assign [class="firefox"] workspace number 2
 assign [app_id="firefox"] workspace number 2
+
 assign [class="discord"] workspace number 3
 assign [class="Mumble"] workspace number 3
+
 assign [class="steam"] workspace number 4
-assign [class="hl2_linux"] workspace number 5
-assign [class="steam_app_1337520"] workspace number 5 #rorr
-assign [class="steam_app_2357570"] workspace number 5 #ow2
-assign [class="steam_app_381210"] workspace number 5 #dbd
-assign [class="Celeste"] workspace number 5 #celeste
-assign [class="Spotify"] workspace number 6 
+
+assign [class="obs"] workspace number 5
+
+assign [class="hl2_linux"] workspace number 6
+assign [class="steam_app_1337520"] workspace number 6 #rorr
+assign [class="steam_app_2357570"] workspace number 6 #ow2
+assign [class="steam_app_381210"] workspace number 6 #dbd
+assign [class="Celeste"] workspace number 6 #celeste
+
+assign [class="Spotify"] workspace number 7 
