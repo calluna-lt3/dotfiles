@@ -30,9 +30,6 @@ bindsym $mod+f fullscreen
 
 ## Layout stuff
 #
-# Move focus to the parent container
-bindsym $mod+a focus parent
-
 # Toggle the current focus between tiling and floating mode
 bindsym $mod+Shift+space floating toggle
 
