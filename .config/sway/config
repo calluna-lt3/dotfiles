@@ -1,3 +1,4 @@
-include ~/.config/sway/conf.d/*
 include /etc/sway/config.d/*
+include ~/.config/sway/conf.d/*
+
 # TODO: use hostname to include system specific files
