@@ -7,6 +7,7 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<C-i>", "<C-i>zz")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
+vim.keymap.set("n", "G", "Gzz")
 
 -- Copy/paste system clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
