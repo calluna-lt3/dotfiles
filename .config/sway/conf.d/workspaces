@@ -12,6 +12,7 @@ assign [class="Mumble"] workspace number 3
 
 assign [class="steam"] workspace number 4
 
+assign [class="Spotify"] workspace number 5 
 assign [class="obs"] workspace number 5
 
 assign [class="hl2_linux"] workspace number 6
@@ -20,4 +21,5 @@ assign [class="steam_app_2357570"] workspace number 6 #ow2
 assign [class="steam_app_381210"] workspace number 6 #dbd
 assign [class="Celeste"] workspace number 6 #celeste
 
-assign [class="Spotify"] workspace number 7 
+assign [app_id="org.kde.kdenlive"] workspace number 7
+
