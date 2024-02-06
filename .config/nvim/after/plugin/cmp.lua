@@ -7,15 +7,15 @@ end)
 lsp.setup()
 
 local cmp = require('cmp')
+local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
 
 -- TODO: look into supertab when looking into snippets
 cmp.setup({
     -- key remappings
     mapping = {
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
+
         ['<C-j>'] = cmp.mapping(function()
             if cmp.visible() then
-                -- i think lsp warning on this line is bc var is defined in lsp.setup()
                 cmp.select_next_item(cmp_select_opts)
             else
                 cmp.complete()
