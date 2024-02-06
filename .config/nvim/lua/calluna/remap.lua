@@ -1,4 +1,20 @@
+-- Commands
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- later make this run x program on current file
+-- unsure if ^ is easily possible, unless remap on nvim open, dont want to use tons
+-- of if statements or build a table
+vim.keymap.set("n", "<leader>rr",
+    function()
+        vim.cmd(":w")
+        vim.cmd("!racket %:p")
+    end
+)
+
+-- Copy/paste system clipboard
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>p", "\"+p")
+vim.keymap.set("v", "<leader>p", "\"+p")
 
 -- Center screen on various movements
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -9,8 +25,4 @@ vim.keymap.set("n", "<C-i>", "<C-i>zz")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 vim.keymap.set("n", "G", "Gzz")
 
--- Copy/paste system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>p", "\"+p")
-vim.keymap.set("v", "<leader>p", "\"+p")
+
