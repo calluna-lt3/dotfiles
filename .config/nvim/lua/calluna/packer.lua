@@ -42,8 +42,6 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use('lervag/vimtex')
-    use('sirver/ultisnips')
-
 
 
     use {
