@@ -4,15 +4,53 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use {'wbthomason/packer.nvim'}
 
+
+    ---------- ESSENTIAL-----------
     use {
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
         requires = 'nvim-lua/plenary.nvim'
     }
 
-    -- colorschemes
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v3.x',
+        requires = {
+            -- Manage language servers from neovim
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
+
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-path'},
+            {'hrsh7th/cmp-buffer'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'L3MON4D3/LuaSnip'},
+        }
+    }
+
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate' -- :TSUpdate sometimes doesnt run on PackerSync, run manually
+    }
+
+    use('nvim-treesitter/playground')
+    use('mbbill/undotree')
+    use('theprimeagen/harpoon')
+
+
+    ---------- OTHER ----------
+    use('tpope/vim-fugitive')
+    use('lervag/vimtex')
+
+
+
+    ---------- COLORSCHEMES ----------
     use {
         'axvr/photon.vim',
         as = 'photon'
@@ -30,39 +68,4 @@ return require('packer').startup(function(use)
         'bluz71/vim-moonfly-colors',
         as = 'moonfly'
     }
-
-    -- other
-    require'lspconfig'.racket_langserver.setup{}
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate' -- :TSUpdate sometimes doesnt run on PackerSync, run manually
-    }
-    use('nvim-treesitter/playground')
-    use('theprimeagen/harpoon')
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
-    use('lervag/vimtex')
-
-
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
-            'williamboman/mason.nvim',
-            run = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
-    }
-}
-
 end)

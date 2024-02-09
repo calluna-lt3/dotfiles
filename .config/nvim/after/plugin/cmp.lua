@@ -1,40 +1,22 @@
-local lsp = require('lsp-zero').preset({})
-
-lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
-end)
-
-lsp.setup()
-
+local lsp_zero = require('lsp-zero')
 local cmp = require('cmp')
-local cmp_select_opts = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 -- TODO: look into supertab when looking into snippets
 cmp.setup({
-    -- key remappings
-    mapping = {
+    formatting = lsp_zero.cmp_format(),
 
-        ['<C-j>'] = cmp.mapping(function()
-            if cmp.visible() then
-                cmp.select_next_item(cmp_select_opts)
-            else
-                cmp.complete()
-            end
-        end),
-        ['<C-k>'] = cmp.mapping(function()
-            if cmp.visible() then
-                cmp.select_prev_item(cmp_select_opts)
-            else
-                cmp.complete()
-            end
-        end),
+    sources = {
+        {name = 'path'},
+        {name = 'nvim_lsp'},
+        {name = 'nvim_lua'},
+        {name = 'luasnip', keyword_length = 2},
+        {name = 'buffer', keyword_length = 3},
     },
 
-    -- preselect first item
-    --[[
-    preselect = 'item',
-    completion = {
-        completeopt = 'menu,menuone,noinsert'
-    }
-    ]]
+    mapping = cmp.mapping.preset.insert {
+        ['<C-Space>'] = cmp.mapping.confirm({select = true}),
+        ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+    },
 })
