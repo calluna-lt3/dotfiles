@@ -1,4 +1,5 @@
 local lsp_zero = require('lsp-zero')
+local lsp_config = require('lspconfig')
 
 lsp_zero.on_attach(function(client, bufnr)
     local opts = {buffer = bufnr, remap = false}
@@ -25,12 +26,11 @@ require('mason-lspconfig').setup({
         lsp_zero.default_setup,
         lua_ls = function()
             local lua_opts = lsp_zero.nvim_lua_ls()
-            require('lspconfig').lua_ls.setup(lua_opts)
+            lsp_config.lua_ls.setup(lua_opts)
         end,
     }
 })
 
 -- Other lsps
-local lsp_config = require('lspconfig')
-
+-- Note: not managed by Mason or other, update individually if there are issues
 lsp_config.racket_langserver.setup{}
