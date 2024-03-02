@@ -10,6 +10,38 @@ vim.keymap.set("n", "<leader>rr",
     end
 )
 
+-- Commands
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- later make this run x program on current file
+-- unsure if ^ is easily possible, unless remap on nvim open, dont want to use tons
+-- of if statements or build a table
+vim.keymap.set("n", "<leader>rr",
+    function()
+        vim.cmd(":w")
+        vim.cmd("!racket %:p")
+    end
+)
+
+vim.keymap.set("n", "<leader>rp",
+    function()
+        vim.cmd(":w")
+        vim.cmd("!python3 %:p")
+    end
+)
+
+vim.keymap.set("n", "<leader>rg",
+    function()
+        vim.cmd(":w")
+        vim.cmd("!go run %:p")
+    end
+)
+
+
+
+
+
+
 -- Copy/paste system clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
