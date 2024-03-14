@@ -26,16 +26,4 @@ end
 
 
 return {
-    s(
-        { trig='"' },
-        fmta(
-            [[
-                "<>"<>
-            ]],
-            {
-                d(1, get_visual),
-                i(0)
-            }
-        )
-    ),
 }
