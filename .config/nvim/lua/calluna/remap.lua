@@ -37,6 +37,13 @@ vim.keymap.set("n", "<leader>rg",
     end
 )
 
+vim.keymap.set("n", "<leader>rm",
+    function()
+        vim.cmd(":w")
+        vim.cmd("!./run.sh")
+    end
+)
+
 
 
 
@@ -55,6 +62,9 @@ vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 vim.keymap.set("n", "<C-i>", "<C-i>zz")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
-vim.keymap.set("n", "G", "Gzz")
+vim.keymap.set("n", "gk", "ggzz")
+vim.keymap.set("n", "gj", "Gzz")
 
+-- Vim command window --> insert mode
+vim.keymap.set("n", "<C-f>", "q:i")
 
