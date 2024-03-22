@@ -61,11 +61,7 @@ return require('packer').startup(function(use)
         requires = 'rktjmp/lush.nvim'
     }
     use {
-        'nyoom-engineering/oxocarbon.nvim',
-        as = 'oxocarbon'
-    }
-    use {
-        'bluz71/vim-moonfly-colors',
-        as = 'moonfly'
+        'aktersnurra/no-clown-fiesta.nvim',
+        as = 'no-clown'
     }
 end)
