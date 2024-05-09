@@ -15,11 +15,15 @@ assign [class="steam"] workspace number 4
 assign [class="Spotify"] workspace number 5 
 assign [class="obs"] workspace number 5
 
-assign [class="hl2_linux"] workspace number 6
-assign [class="steam_app_1337520"] workspace number 6 #rorr
-assign [class="steam_app_2357570"] workspace number 6 #ow2
-assign [class="steam_app_381210"] workspace number 6 #dbd
-assign [class="Celeste"] workspace number 6 #celeste
+assign [class="hl2_linux"] workspace number 6           # TF2
+assign [class="tf_linux64"] workspace number 6          # TF2
+assign [class="steam_app_824270"] workspace number 6    # Kovaaks
+assign [class="steam_app_1337520"] workspace number 6   # RORR
+assign [class="steam_app_2357570"] workspace number 6   # OW2
+assign [class="steam_app_381210"] workspace number 6    # DBD
+assign [class="Celeste"] workspace number 6             # Celeste
+assign [class="Slippi Launcher"] workspace number 6     # Slippi
+assign [class="Apprun"] workspace number 6              # Faster Melee/Dolphin
+assign [app_id="mypaint"] workspace number 6            # MyPaint
 
 assign [app_id="org.kde.kdenlive"] workspace number 7
-
