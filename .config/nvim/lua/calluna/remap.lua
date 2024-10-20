@@ -35,5 +35,4 @@ vim.keymap.set("v", "gk", "ggzz")
 vim.keymap.set("v", "gj", "Gzz")
 
 -- Vim command window --> insert mode
-vim.keymap.set("n", "<C-f>", "q:i")
-
+vim.keymap.set("n", "<C-f>", "q:")
