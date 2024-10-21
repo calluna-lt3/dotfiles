@@ -14,7 +14,6 @@ return require('packer').startup(function(use)
     }
 
     use {
-        -- UPDATE EVENTUALLY
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
         requires = {
