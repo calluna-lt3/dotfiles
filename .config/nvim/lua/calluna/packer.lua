@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        branch = 'v4.x',
         requires = {
             -- Manage language servers from neovim
             {'williamboman/mason.nvim'},

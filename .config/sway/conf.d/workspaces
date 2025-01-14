@@ -4,8 +4,11 @@
 # note: workspace 1 used for kitty, but want to be able to open a terminal
 # anywhere easily so it doesnt get auto-assigned ^-^
 
+assign [app_id="mpv"] workspace number 1
+
 assign [class="firefox"] workspace number 2
 assign [app_id="firefox"] workspace number 2
+#assign [app_id="org.qutebrowser.qutebrowser"] workspace number 2
 
 assign [class="discord"] workspace number 3
 assign [class="vesktop"] workspace number 3

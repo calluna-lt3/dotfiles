@@ -23,6 +23,10 @@ vim.keymap.set("n", "<C-f>", "q:")
 
 -- TODO: something using substitute :'<,'>s\(.*\)/<something>/g
 
+-- Bubbling lines (taken from some wiki)
+vim.keymap.set("v", "<C-k>", [[:m '<-2<CR>gv=gv]])
+vim.keymap.set("v", "<C-j>", [[:m '>+1<CR>gv=gv]])
+
 -- Compile & Run
 -- TODO: this is kinda trash
 vim.keymap.set("n", "<leader>pc",
