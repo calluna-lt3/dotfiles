@@ -18,27 +18,6 @@ vim.keymap.set("n", "<C-o>", "<C-o>zz")
 vim.keymap.set({"n", "v"}, "gk", "ggzz")
 vim.keymap.set({"n", "v"}, "gj", "Gzz")
 
--- Vim command window --> insert mode
-vim.keymap.set("n", "<C-f>", "q:")
-
--- TODO: something using substitute :'<,'>s\(.*\)/<something>/g
-
--- Bubbling lines (taken from some wiki)
+-- Bubbling lines (https://mkaz.blog/working-with-vim/lines#bubble-up-lines)
 vim.keymap.set("v", "<C-k>", [[:m '<-2<CR>gv=gv]])
 vim.keymap.set("v", "<C-j>", [[:m '>+1<CR>gv=gv]])
-
--- Compile & Run
--- TODO: this is kinda trash
-vim.keymap.set("n", "<leader>pc",
-    function()
-        vim.cmd(":w")
-        vim.cmd("!./compile.sh")
-    end
-)
-vim.keymap.set("n", "<leader>pr",
-    function()
-        vim.cmd(":w")
-        vim.cmd("!./run.sh")
-    end
-)
-
