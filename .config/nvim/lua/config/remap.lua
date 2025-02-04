@@ -21,3 +21,14 @@ vim.keymap.set({"n", "v"}, "gj", "Gzz")
 -- Bubbling lines (https://mkaz.blog/working-with-vim/lines#bubble-up-lines)
 vim.keymap.set("v", "<C-k>", [[:m '<-2<CR>gv=gv]])
 vim.keymap.set("v", "<C-j>", [[:m '>+1<CR>gv=gv]])
+
+
+-- idk where to put this
+vim.api.nvim_create_autocmd('TextYankPost', {
+    group = vim.api.nvim_create_augroup('highlight_yank', {}),
+    desc = 'Highlight selection on yank',
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank {higroup = 'IncSearch', timeout = 50}
+    end,
+})
