@@ -6,11 +6,11 @@ fi
 
 dir=$1
 filename="$(echo "$RANDOM" | md5sum | cut -d ' ' -f1 | tr -d '\n')"
-echo -n "zip password? [Y/n] "
-read password 
-password="$(echo "$password" | tr '[:upper:]' '[:lower:]')" 
+echo -n "zip password? [y/N] "
+read password
+password="$(echo "$password" | tr '[:upper:]' '[:lower:]')"
 
-zip -r /tmp/$filename $dir 
+zip -r /tmp/$filename $dir
 if [[ "$password" == "y" ]]; then
     zipcloak /tmp/$filename.zip
 fi

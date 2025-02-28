@@ -9,6 +9,7 @@ return {
             sources = {
                 { name = 'nvim_lsp' },
                 { name = 'path' },
+                { name = 'nvim-jdtls' },
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-Space>'] = cmp.mapping.confirm{
