@@ -1,0 +1,2 @@
+alias sf='cd "$(dirname $(find $HOME/ -type f | fzf ))"'
+alias sd='cd "$(find $HOME/ -type d | fzf)"'
