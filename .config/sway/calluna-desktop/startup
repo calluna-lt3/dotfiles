@@ -1,0 +1,11 @@
+include "/etc/sway/config.d/*"
+
+### Startup ###
+#
+exec foot
+exec firefox
+exec vesktop
+exec steam
+
+exec --no-startup-id /usr/lib/xdg-desktop-portal -r # for obs screen recording on wayland
+exec $HOME/.scripts/random-bgr

@@ -1,4 +1,4 @@
-### Set ### 
+### Binds ###
 #
 set $left h
 set $down j
@@ -30,8 +30,8 @@ bindsym $mod+f fullscreen
 
 ## Custom
 bindsym $mod+shift+g exec grim -g "$(slurp)"
-bindsym $mod+g exec ~/.scripts/ssc
-bindsym $mod+b exec ~/.scripts/swaybordertoggle ## i dont know why my custom scripts need to have direct path but this works for temp fix
+bindsym $mod+g exec $HOME/.scripts/ssc
+bindsym $mod+b exec $HOME/.scripts/swaybordertoggle ## i dont know why my custom scripts need to have direct path but this works for temp fix
 
 ## Sway
 bindsym $mod+Shift+c reload

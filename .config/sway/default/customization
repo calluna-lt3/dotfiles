@@ -1,0 +1,24 @@
+### Customization ###
+#
+## Borders/Windows
+default_border pixel 1
+default_floating_border pixel
+client.focused #ffffffff #ffffffff #ffffffff #00000000
+smart_borders on
+
+bar {
+    position top
+    tray_output none
+    status_padding 1
+    status_edge_padding 0
+    status_command while $HOME/.config/sway/bar/bar.sh; do sleep 1; done
+
+    colors {
+        statusline #e1dcdc
+        background #201f1e
+        inactive_workspace #201f1e #201f1e #e1dcdc
+        focused_workspace #e1dcdc #e1dcdc #201f1e
+        urgent_workspace #e14b4b #e14b4b #e1dcdc
+    }
+}
+
