@@ -1,0 +1,11 @@
+# ~/.bashrc.d/env
+
+export PATH=$PATH:$HOME/.scripts/
+export LD_LIBRARY_PATH=LD_LIBRARY_PATH:/usr/local/lib
+
+export MANPAGER='nvim -c "set signcolumn=no" +Man!'
+export BROWSER=firefox
+
+export XDG_CURRENT_DESKTOP=sway # obs pipewire compatibility
+export HISTFILESIZE=
+export HISTSIZE=
