@@ -1,5 +1,5 @@
 return {
-    'ej-shafran/compile-mode.nvim', tag = "v5.*",
+    'ej-shafran/compile-mode.nvim', branch = 'latest',
     dependencies = { 'nvim-lua/plenary.nvim' },
     key = { '<leader>c', '<leader>r', '<leader>n' },
     config = function ()

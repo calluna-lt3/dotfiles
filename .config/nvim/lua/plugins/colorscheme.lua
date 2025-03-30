@@ -1,9 +1,9 @@
 return {
-    'aktersnurra/no-clown-fiesta.nvim',
+    'jaredgorski/fogbell.vim',
     lazy = false,
     priority = 1000,
     config = function()
-        vim.cmd([[colorscheme no-clown-fiesta]])
+        vim.cmd([[colorscheme fogbell]])
     end,
 }
 
