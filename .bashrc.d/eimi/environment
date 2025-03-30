@@ -1,2 +1,3 @@
 #!/bin/bash
 
+export MANPAGER='nvim -c "set signcolumn=no" +Man!'
