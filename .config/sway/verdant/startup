@@ -1,0 +1,6 @@
+### Startup ###
+#
+exec foot
+exec firefox
+
+#exec $HOME/.scripts/random-bgr

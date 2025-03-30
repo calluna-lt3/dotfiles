@@ -1,0 +1,17 @@
+### Input/Output ###
+#
+## Input
+#
+# Touchpad
+input "1739:52544:SYNA7DAB:01_06CB:CD40_Touchpad" {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+}
+
+
+## Output
+#
+# Display
+output eDP-1 mode 1920x1080@60Hz pos 0 0
+#output * background $HOME/storage/media/images/backgrounds/bgr.png fill
