@@ -1,0 +1,3 @@
+#!/bin/bash
+
+PS1=' [verdant]\W/ $(__git_ps1 "(%s) ")\e[1;$([[ $? = 0 ]] && printf 35 || printf 31)m<3\e[0m '

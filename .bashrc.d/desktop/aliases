@@ -4,3 +4,4 @@ alias sf='cd "$(dirname $(find $HOME/storage $HOME/ -type f | fzf ))"'
 alias sd='cd "$(find $HOME/storage/ $HOME/ -type d | fzf)"'
 alias tfd='cd /home/nao/.local/share/Steam/steamapps/common/Team\ Fortress\ 2/tf'
 alias tfcfg='/usr/bin/git --git-dir=$HOME/.local/share/Steam/steamapps/common/Team\ Fortress\ 2/tf  --work-tree=$HOME/.local/share/Steam/steamapps/common/Team\ Fortress\ 2/'
+
