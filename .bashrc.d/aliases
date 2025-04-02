@@ -9,12 +9,7 @@ alias vp='zathura '
 alias vi='nvim'
 alias vim='nvim'
 
-# [S|Plebeian IV] Golden halo: kjr = cringe
-# [S|Plebeian IV] Golden halo: boom
-# [O|Sir IV] kjr.: wow
-# kjr. has left the server.
-# [S|Plebeian IV] Golden halo: rq
-alias rq='shutdown now'
+alias pet='touch'
 
 # git bare repos
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'

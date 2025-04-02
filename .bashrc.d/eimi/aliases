@@ -5,3 +5,9 @@ alias sd='cd "$(find $HOME/storage/ $HOME/ -type d | fzf)"'
 alias tfd='cd /home/nao/.local/share/Steam/steamapps/common/Team\ Fortress\ 2/tf'
 alias tfcfg='/usr/bin/git --git-dir=$HOME/.local/share/Steam/steamapps/common/Team\ Fortress\ 2/tf  --work-tree=$HOME/.local/share/Steam/steamapps/common/Team\ Fortress\ 2/'
 
+# [S|Plebeian IV] Golden halo: kjr = cringe
+# [S|Plebeian IV] Golden halo: boom
+# [O|Sir IV] kjr.: wow
+# kjr. has left the server.
+# [S|Plebeian IV] Golden halo: rq
+alias rq='shutdown now'
