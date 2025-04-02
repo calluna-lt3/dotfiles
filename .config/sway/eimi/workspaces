@@ -1,36 +1,34 @@
 ### Workspaces ###
 #
-assign [app_id="mpv"] workspace number 1
+assign [app_id="mpv"]                   workspace $ws1
 
-assign [class="firefox"] workspace number 2
-assign [app_id="firefox"] workspace number 2
-#assign [app_id="org.qutebrowser.qutebrowser"] workspace number 2
+assign [class="firefox"]                workspace $ws2
+assign [app_id="firefox"]               workspace $ws2
 
-assign [class="discord"] workspace number 3
-assign [class="vesktop"] workspace number 3
-assign [class="Mumble"] workspace number 3
+assign [class="discord"]                workspace $ws3
+assign [class="vesktop"]                workspace $ws3
+assign [class="Mumble"]                 workspace $ws3
 
-assign [class="steam"] workspace number 4
+assign [class="steam"]                  workspace $ws4
 
-assign [class="Spotify"] workspace number 5
-assign [app_id="deadbeef"] workspace number 5
-assign [class="obs"] workspace number 5
-assign [app_id="com.obsproject.Studio"] workspace number 5
-assign [app_id="org.prismlauncher.PrismLauncher"] workspace number 5
+assign [class="Spotify"]                workspace $ws5
+assign [app_id="deadbeef"]              workspace $ws5
+assign [class="obs"]                    workspace $ws5
+assign [app_id="com.obsproject.Studio"] workspace $ws5
 
-assign [class="hl2_linux"] workspace number 6           # TF2
-assign [class="tf_linux64"] workspace number 6          # TF2
-assign [class="steam_app_824270"] workspace number 6    # Kovaaks
-assign [class="steam_app_1337520"] workspace number 6   # RORR
-assign [class="steam_app_2357570"] workspace number 6   # OW2
-assign [class="steam_app_381210"] workspace number 6    # DBD
-assign [class="steam_app_374320"] workspace number 6    # DS3
-assign [class="steam_app_722730"] workspace number 6    # Cogmind
-assign [class="Celeste"] workspace number 6             # Celeste
-assign [class="factorio"] workspace number 6            # Factorio
-assign [class="Slippi Launcher"] workspace number 6     # Slippi
-assign [class="Apprun"] workspace number 6              # Faster Melee/Dolphin
-assign [class="StaTech Industry"] workspace number 6    # StaTech (MC)
-assign [app_id="mypaint"] workspace number 6            # MyPaint
+assign [class="hl2_linux"]              workspace $ws6 # TF2
+assign [class="tf_linux64"]             workspace $ws6 # TF2
+assign [class="steam_app_824270"]       workspace $ws6 # Kovaaks
+assign [class="steam_app_1337520"]      workspace $ws6 # RORR
+assign [class="steam_app_2357570"]      workspace $ws6 # OW2
+assign [class="steam_app_381210"]       workspace $ws6 # DBD
+assign [class="steam_app_374320"]       workspace $ws6 # DS3
+assign [class="steam_app_722730"]       workspace $ws6 # Cogmind
+assign [class="Celeste"]                workspace $ws6 # Celeste
+assign [class="factorio"]               workspace $ws6 # Factorio
+assign [class="Slippi Launcher"]        workspace $ws6 # Slippi
+assign [class="Apprun"]                 workspace $ws6 # Faster Melee/Dolphin
+assign [class="StaTech Industry"]       workspace $ws6 # StaTech (MC)
+assign [app_id="mypaint"]               workspace $ws6 # MyPaint
 
-assign [app_id="org.kde.kdenlive"] workspace number 7
+assign [app_id="org.kde.kdenlive"]      workspace $ws7

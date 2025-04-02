@@ -1,5 +1,5 @@
 ### Workspaces ###
 #
-assign [app_id="mpv"] workspace number 1
+assign [app_id="mpv"]     workspace $ws1
 
-assign [app_id="Firefox"] workspace number 2
+assign [app_id="Firefox"] workspace $ws2

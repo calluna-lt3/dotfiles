@@ -12,6 +12,7 @@ bar {
     status_padding 1
     status_edge_padding 0
     status_command while $HOME/.config/sway/bar/bar.sh; do sleep 1; done
+    strip_workspace_numbers yes
 
     colors {
         statusline #e1dcdc

@@ -2,7 +2,7 @@ include "/etc/sway/config.d/*"
 
 ### Startup ###
 #
-exec foot
+exec foot tmux
 exec firefox
 exec vesktop
 exec steam
