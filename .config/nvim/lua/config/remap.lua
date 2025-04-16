@@ -24,3 +24,12 @@ vim.keymap.set("v", "<C-j>", [[:m '>+1<CR>gv=gv]])
 
 -- Man pages
 vim.keymap.set("n", "<leader>k", ":vert Man<CR>:set signcolumn=no<CR>")
+
+-- hlsearch
+vim.keymap.set("n", "<leader>o", ":set nohls<CR>")
+vim.keymap.set("n", "/", ":set hls<CR>/")
+vim.keymap.set("n", "#", ":set hls<CR>#")
+vim.keymap.set("n", "*", ":set hls<CR>*")
+
+-- substitute
+vim.keymap.set("n", "<leader>s", ":s/\\(.*\\)/<CR>")

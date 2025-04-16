@@ -1,11 +1,25 @@
 return {
     'theprimeagen/harpoon',
-    keys = {
-        { '<leader>a', function() require('harpoon.mark').add_file() end,        mode = 'n'},
-        { '<C-e>',     function() require('harpoon.ui').toggle_quick_menu() end, mode = 'n'},
-        { '<C-j>',     function() require('harpoon.ui').nav_file(1) end,         mode = 'n'},
-        { '<C-k>',     function() require('harpoon.ui').nav_file(2) end,         mode = 'n'},
-        { '<C-l>',     function() require('harpoon.ui').nav_file(3) end,         mode = 'n'},
-        { '<C-h>',     function() require('harpoon.ui').nav_file(4) end,         mode = 'n'},
-    },
+    branch = "harpoon2",
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        local harpoon = require('harpoon')
+        local harpoon_extensions = require('harpoon.extensions')
+
+        harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
+        harpoon:setup({
+            settings = {
+                save_on_toggle = true,
+                sync_on_ui_close = true,
+            },
+        })
+
+        vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+        vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+        vim.keymap.set("n", "<C-j>", function() harpoon:list():select(1) end)
+        vim.keymap.set("n", "<C-k>", function() harpoon:list():select(2) end)
+        vim.keymap.set("n", "<C-l>", function() harpoon:list():select(3) end)
+        vim.keymap.set("n", "<C-h>", function() harpoon:list():select(4) end)
+    end,
 }

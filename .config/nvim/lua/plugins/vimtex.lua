@@ -1,6 +1,6 @@
 return {
     'lervag/vimtex',
-
+    tag = 'v2.16',
     init = function()
         vim.cmd([[
             let g:vimtex_view_method = "zathura"

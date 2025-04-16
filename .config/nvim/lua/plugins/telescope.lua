@@ -1,7 +1,6 @@
 return {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = { '<leader>pf', '<C-p>pf', '<leader>ps' },
     config = function()
         local builtin = require('telescope.builtin')
 
