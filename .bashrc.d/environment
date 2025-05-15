@@ -9,4 +9,4 @@ export XDG_CURRENT_DESKTOP=sway # obs pipewire compatibility
 export HISTFILESIZE=
 export HISTSIZE=
 
-PS1=' [\h] $(__git_ps1 "(%s) ")\W/ \e[1;$([[ $? = 0 ]] && printf 35 || printf 31)m<3\e[0m '
+PS1=' [\h] \[$(__git_ps1 "(%s) ")\]\W/ \[\e[1;$([[ $? = 0 ]] && printf 35 || printf 31)m\]<3\e[0m '
