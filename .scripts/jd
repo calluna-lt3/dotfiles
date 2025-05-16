@@ -1,0 +1,66 @@
+#!/bin/bash
+
+CONFIG=$HOME/.scripts/jd.conf
+CMD=jump
+USAGE="jd [OPTS] [MARK]"
+
+jump () {
+    echo jump
+    echo $1
+}
+
+mark () {
+    echo mark
+    echo $1
+}
+
+remove () {
+    echo remove
+    echo $1
+}
+
+
+while getopts 'mr' OPT; do
+    case "$OPT" in
+        m)
+            CMD=mark
+            ;;
+        r)
+            CMD=remove
+            ;;
+        \?)
+            echo read the script :pleading:
+            exit 1
+            ;;
+    esac
+done
+
+if [[ "$#" == 1 ]]; then
+    ARG=$1
+elif [[ "$#" == 2 ]]; then
+    ARG=$2
+fi
+
+if [[ -z $ARG ]]; then
+    echo $USAGE
+    exit 1
+fi
+
+
+case $CMD in
+    "jump")
+        jump "$ARG"
+        ;;
+    "mark")
+        mark "$ARG"
+        ;;
+    "remove")
+        remove "$ARG"
+        ;;
+    *)
+        echo unreachable
+        exit 1
+        ;;
+esac
+
+

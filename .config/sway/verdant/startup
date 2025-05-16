@@ -1,6 +1,6 @@
 ### Startup ###
 #
 exec foot tmux
-exec firefox
+exec firefox-wayland
 
 #exec $HOME/.scripts/random-bgr
