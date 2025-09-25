@@ -32,4 +32,4 @@ vim.keymap.set("n", "#", ":set hls<CR>#")
 vim.keymap.set("n", "*", ":set hls<CR>*")
 
 -- substitute
-vim.keymap.set("n", "<leader>s", ":s/\\(.*\\)/<CR>")
+vim.keymap.set("n", "<leader>s", ":s/")
