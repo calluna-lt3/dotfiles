@@ -3,5 +3,7 @@
 assign [app_id="mpv"]     workspace $ws1
 
 assign [app_id="Firefox"] workspace $ws2
+assign [app_id="librewolf"] workspace $ws2
+for_window [app_id="librewolf"] sticky enable
 
 assign [class="vesktop"]  workspace $ws3

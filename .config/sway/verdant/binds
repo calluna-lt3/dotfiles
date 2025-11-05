@@ -1,0 +1,2 @@
+bindsym $mod+n exec brightnessctl s 10%-
+bindsym $mod+m exec brightnessctl s +10%

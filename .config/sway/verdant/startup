@@ -1,6 +1,6 @@
 ### Startup ###
 #
 exec foot tmux
-exec firefox-wayland
+exec librewolf && rmdir $HOME/Downloads
 
-#exec $HOME/.scripts/random-bgr
+exec $HOME/.scripts/random-bgr

@@ -12,7 +12,7 @@ input "1739:52544:SYNA7DAB:01_06CB:CD40_Touchpad" {
 
 
 ## Output
-#
+
 # Display
 output eDP-1 mode 1920x1080@60Hz pos 0 0
-#output * background $HOME/storage/media/images/backgrounds/bgr.png fill
+output * background $HOME/media/images/bgr/active.png fill
