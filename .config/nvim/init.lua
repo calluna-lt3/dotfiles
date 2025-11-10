@@ -54,7 +54,7 @@ local function remove_unused_plugins()
     for i = 1, #plugins do
         local plugin = plugins[i]
         if not plugin.active then
-            unused.insert(plugin.spec.name)
+            table.insert(unused, plugin.spec.name)
         end
     end
 
@@ -88,7 +88,6 @@ lint.linters_by_ft = {
 }
 
 lint.linters.mypy.args = {
-    '--strict',
     '--show-column-numbers',
     '--show-error-end',
     '--hide-error-context',
