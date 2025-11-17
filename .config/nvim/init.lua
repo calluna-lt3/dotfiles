@@ -43,7 +43,6 @@ vim.pack.add({
     { src = 'https://github.com/ej-shafran/compile-mode.nvim' },
     { src = 'https://github.com/nvim-telescope/telescope.nvim', branch = '0.1.x' },
     { src = 'https://github.com/Saghen/blink.cmp', branch = '1.x' },
-    { src = 'https://github.com/nvzone/showkeys' },
     { src = 'https://github.com/stevearc/conform.nvim' },
     { src = 'https://github.com/mfussenegger/nvim-lint' },
 })
@@ -54,7 +53,7 @@ local function remove_unused_plugins()
     for i = 1, #plugins do
         local plugin = plugins[i]
         if not plugin.active then
-            unused.insert(plugin.spec.name)
+            table.insert(unused, plugin.spec.name)
         end
     end
 
@@ -68,18 +67,14 @@ vim.cmd('colorscheme fogbell')
 
 require('mason').setup()
 
-require('showkeys').setup({
-    timeout = 999,
-    maxkeys = 5,
-    position = 'top-right',
-})
-
 vim.g.compile_mode = {
     default_command = '',
     recompile_no_fail = true,
     auto_jump_to_first_error = false,
     debug = false,
 }
+
+vim.lsp.config.clangd.cmd = { 'clangd', '--background-index' }
 
 local lint = require('lint')
 lint.linters_by_ft = {
@@ -88,7 +83,6 @@ lint.linters_by_ft = {
 }
 
 lint.linters.mypy.args = {
-    '--strict',
     '--show-column-numbers',
     '--show-error-end',
     '--hide-error-context',
@@ -100,7 +94,7 @@ lint.linters.mypy.args = {
 vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = '*',
     callback = function()
-        lint.try_lint()
+        -- lint.try_lint()
     end,
 })
 
@@ -154,13 +148,6 @@ cmp.setup({
         --     end,
         -- },
     },
-    completion = {
-        trigger = {
-            show_on_trigger_character = false,
-            prefetch_on_insert = false,
-            show_on_keyword = false,
-        },
-    },
     fuzzy = { implementation = 'lua' },
 })
 
@@ -201,7 +188,6 @@ vim.keymap.set('n', '<leader>li', builtin.lsp_implementations)
 vim.keymap.set('n', '<leader>lt', builtin.lsp_type_definitions)
 vim.keymap.set('n', '<leader>lf', function()
     conform.format()
-    lint.try_lint()
 end)
 vim.keymap.set('n', '<leader>ln', vim.lsp.buf.rename)
 
