@@ -45,6 +45,7 @@ vim.pack.add({
     { src = 'https://github.com/Saghen/blink.cmp', branch = '1.x' },
     { src = 'https://github.com/stevearc/conform.nvim' },
     { src = 'https://github.com/mfussenegger/nvim-lint' },
+    { src = 'https://github.com/cbochs/grapple.nvim' },
 })
 
 local function remove_unused_plugins()
@@ -73,6 +74,11 @@ vim.g.compile_mode = {
     auto_jump_to_first_error = false,
     debug = false,
 }
+
+local grapple = require('grapple')
+grapple.setup({
+    icons = false,
+})
 
 vim.lsp.config.clangd.cmd = { 'clangd', '--background-index' }
 
@@ -180,7 +186,7 @@ vim.keymap.set('n', '<leader>v', vim.cmd.Ex)
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', builtin.find_files)
-vim.keymap.set('n', '<leader>g', builtin.live_grep)
+vim.keymap.set('n', '<leader>lg', builtin.live_grep)
 vim.keymap.set('n', '<leader>ls', builtin.grep_string)
 vim.keymap.set('n', '<leader>lr', builtin.lsp_references)
 vim.keymap.set('n', '<leader>ld', builtin.lsp_definitions)
@@ -196,3 +202,6 @@ vim.keymap.set('n', '<leader>u', '<CMD>UndotreeToggle<CR>')
 vim.keymap.set('n', '<leader>c', '<CMD>below Compile<CR>')
 vim.keymap.set('n', '<leader>r', '<CMD>w<CR><CMD>below Recompile<CR>')
 vim.keymap.set('n', '<leader>n', '<CMD>NextError<CR>')
+
+vim.keymap.set('n', '<leader>a', '<CMD>Grapple toggle<CR>')
+vim.keymap.set('n', '<leader>m', '<CMD>Grapple toggle_tags<CR>')
