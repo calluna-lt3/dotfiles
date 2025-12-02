@@ -146,13 +146,6 @@ cmp.setup({
         },
         ['<C-k>'] = { 'select_prev', 'fallback' },
         ['<C-l>'] = { 'select_and_accept', 'fallback' },
-        -- seems cool in theory but very buggy in practice
-        -- ['<C-l>'] = {
-        --     function()
-        --         cmp.show_and_insert_or_accept_single()
-        --         cmp.select_and_accept()
-        --     end,
-        -- },
     },
     fuzzy = { implementation = 'lua' },
 })
@@ -192,9 +185,7 @@ vim.keymap.set('n', '<leader>lr', builtin.lsp_references)
 vim.keymap.set('n', '<leader>ld', builtin.lsp_definitions)
 vim.keymap.set('n', '<leader>li', builtin.lsp_implementations)
 vim.keymap.set('n', '<leader>lt', builtin.lsp_type_definitions)
-vim.keymap.set('n', '<leader>lf', function()
-    conform.format()
-end)
+vim.keymap.set('n', '<leader>lf', function() conform.format() end)
 vim.keymap.set('n', '<leader>ln', vim.lsp.buf.rename)
 
 vim.keymap.set('n', '<leader>u', '<CMD>UndotreeToggle<CR>')
@@ -204,23 +195,12 @@ vim.keymap.set('n', '<leader>r', '<CMD>w<CR><CMD>below Recompile<CR>')
 vim.keymap.set('n', '<leader>n', '<CMD>NextError<CR>')
 
 vim.keymap.set('n', '<C-e>', grapple.toggle_tags)
+vim.keymap.set('n', '<C-g>', function() grapple.toggle_tags({ scope = 'global' }) end)
+
 vim.keymap.set('n', '<leader>ga', grapple.tag)
-vim.keymap.set('n', '<leader>gg', function()
-    grapple.tag({ scope = 'global' })
-end)
+vim.keymap.set('n', '<leader>gg', function() grapple.tag({ scope = 'global' }) end)
 
-vim.keymap.set('n', '<C-j>', function()
-    grapple.select({ index = 1 })
-end)
-
-vim.keymap.set('n', '<C-k>', function()
-    grapple.select({ index = 2 })
-end)
-
-vim.keymap.set('n', '<C-l>', function()
-    grapple.select({ index = 3 })
-end)
-
-vim.keymap.set('n', '<C-h>', function()
-    grapple.select({ index = 4 })
-end)
+vim.keymap.set('n', '<C-j>', function() grapple.select({ index = 1 }) end)
+vim.keymap.set('n', '<C-k>', function() grapple.select({ index = 2 }) end)
+vim.keymap.set('n', '<C-l>', function() grapple.select({ index = 3 }) end)
+vim.keymap.set('n', '<C-h>', function() grapple.select({ index = 4 }) end)
