@@ -1,32 +1,80 @@
 #!/bin/bash
 
-CONFIG=$HOME/.scripts/jd.conf
+JD_PATH=$HOME/.scripts
+CONFIG=$JD_PATH/jd.conf
 CMD=jump
 USAGE="jd [OPTS] [MARK]"
 
 jump () {
-    echo jump
-    echo $1
+    for i in $(seq 0 ${#MARKS}); do
+        if [[ "${MARKS[i]}" == "$ARG" ]]; then
+            echo cd ${PATHS[i]}
+            # cd ${PATHS[i]}
+            exit 0
+        fi
+    done
+
+    echo "$ARG not found in $CONFIG"
+    exit 1
+}
+
+list () {
+    for i in $(seq 0 ${#MARKS}); do
+        echo "${MARKS[i]} -> ${PATHS[i]}"
+    done
+    exit 0
+}
+
+mark_exists () {
+    local found=0
+    for i in $(seq 0 ${#MARKS}); do
+        if [[ "${MARKS[i]}" == "$1" ]]; then
+            found=1
+        fi
+    done
+
+    return found
 }
 
 mark () {
-    echo mark
-    echo $1
+    exists=mark_exists "$1"
+    if [[ exists ]]; then
+        echo "Mark with that name already exists"
+        exit 1
+    fi
+
+    >>
 }
 
 remove () {
-    echo remove
-    echo $1
+    exists=mark_exists "$1"
+    if [[ exists ]]; then
+        echo "Mark doesn't exist in $CONFIG"
+        exit 1
+    fi
+
+    file=$JD_PATH/jd.new
+    > $file
+    for i in $(seq 0 ${#MARKS}); do
+        if [[ "${MARKS[i]}" != "$1" ]]; then
+            echo ${MARKS[i]}:${PATHS[i]} >> $file
+        fi
+    done
+
+    mv $file $CONFIG
+    exit 0
 }
 
-
-while getopts 'mr' OPT; do
+while getopts 'mrl' OPT; do
     case "$OPT" in
         m)
             CMD=mark
             ;;
         r)
             CMD=remove
+            ;;
+        l)
+            CMD=list
             ;;
         \?)
             echo read the script :pleading:
@@ -37,8 +85,10 @@ done
 
 if [[ "$#" == 1 ]]; then
     ARG=$1
+    ARG2=$2
 elif [[ "$#" == 2 ]]; then
     ARG=$2
+    ARG2=$3
 fi
 
 if [[ -z $ARG ]]; then
@@ -46,21 +96,27 @@ if [[ -z $ARG ]]; then
     exit 1
 fi
 
+for row in $(seq 1 $(wc -l < $CONFIG)); do
+    raw=( $(awk -v row=$row -F':' 'FNR == row { printf("%s %s", $1, $2) }' $CONFIG) )
+    MARKS[$row - 1]=${raw[0]}
+    PATHS[$row - 1]=${raw[1]}
+done
 
 case $CMD in
     "jump")
         jump "$ARG"
         ;;
     "mark")
-        mark "$ARG"
+        mark "$ARG" "$ARG2"
         ;;
     "remove")
         remove "$ARG"
+        ;;
+    "list")
+        list
         ;;
     *)
         echo unreachable
         exit 1
         ;;
 esac
-
-

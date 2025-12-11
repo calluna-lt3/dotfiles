@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TO=./by
-FROM=.
+FROM=$(pwd)
 CATALOG=./catalog
 
 VERBOSE=false
