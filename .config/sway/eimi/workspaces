@@ -1,9 +1,10 @@
-### Workspaces ###
+### Workspaces
 #
 assign [app_id="mpv"]                   workspace $ws1
 
 assign [class="firefox"]                workspace $ws2
 assign [app_id="firefox"]               workspace $ws2
+assign [app_id="zen"]                   workspace $ws2
 
 assign [class="discord"]                workspace $ws3
 assign [class="vesktop"]                workspace $ws3
@@ -15,20 +16,24 @@ assign [class="Spotify"]                workspace $ws5
 assign [app_id="deadbeef"]              workspace $ws5
 assign [class="obs"]                    workspace $ws5
 assign [app_id="com.obsproject.Studio"] workspace $ws5
+assign [app_id="org.strawberrymusicplayer.strawberry"] workspace $ws5
 
-assign [class="hl2_linux"]              workspace $ws6 # TF2
-assign [class="tf_linux64"]             workspace $ws6 # TF2
-assign [class="steam_app_824270"]       workspace $ws6 # Kovaaks
-assign [class="steam_app_1337520"]      workspace $ws6 # RORR
-assign [class="steam_app_2357570"]      workspace $ws6 # OW2
-assign [class="steam_app_381210"]       workspace $ws6 # DBD
-assign [class="steam_app_374320"]       workspace $ws6 # DS3
-assign [class="steam_app_722730"]       workspace $ws6 # Cogmind
-assign [class="Celeste"]                workspace $ws6 # Celeste
-assign [class="factorio"]               workspace $ws6 # Factorio
-assign [class="Slippi Launcher"]        workspace $ws6 # Slippi
-assign [class="Apprun"]                 workspace $ws6 # Faster Melee/Dolphin
-assign [class="StaTech Industry"]       workspace $ws6 # StaTech (MC)
-assign [app_id="mypaint"]               workspace $ws6 # MyPaint
+assign [class="hl2_linux"]              workspace $ws6
+assign [class="tf_linux64"]             workspace $ws6
+assign [class="steam_app_824270"]       workspace $ws6
+assign [class="steam_app_1337520"]      workspace $ws6
+assign [class="steam_app_2357570"]      workspace $ws6
+assign [class="steam_app_381210"]       workspace $ws6
+assign [class="steam_app_374320"]       workspace $ws6
+assign [class="steam_app_722730"]       workspace $ws6
+assign [class="steam_app_1217060"]      workspace $ws6
+assign [class="Celeste"]                workspace $ws6
+assign [class="factorio"]               workspace $ws6
+assign [class="Slippi Launcher"]        workspace $ws6
+assign [class="Apprun"]                 workspace $ws6
+assign [class="StaTech Industry"]       workspace $ws6
+assign [app_id="mypaint"]               workspace $ws6
+assign [class="RimWorldLinux"]          workspace $ws6
+assign [class="steam_app_2739990"]      workspace $ws6
 
 assign [app_id="org.kde.kdenlive"]      workspace $ws7

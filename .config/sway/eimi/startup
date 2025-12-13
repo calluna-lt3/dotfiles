@@ -3,9 +3,12 @@ include "/etc/sway/config.d/*"
 ### Startup ###
 #
 exec foot tmux
-exec firefox
-exec vesktop
+exec zen-browser
+#exec firefox
+exec discord
+#exec vesktop
 exec steam
+exec strawberry
 
 exec --no-startup-id /usr/lib/xdg-desktop-portal -r # for obs screen recording on wayland
 exec $HOME/.scripts/random-bgr
