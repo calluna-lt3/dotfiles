@@ -1,0 +1,19 @@
+DEFAULT_BASH="/home/mlwpsh/.nix-profile/bin/bash"
+
+__nixshell_ps1 () {
+    local exit=$?
+    local printf_format="(%s)"
+    local printf_contents="#"
+
+    if [[ "$#" == 1 ]]; then
+        printf_format=$1
+    elif [[ "$#" == 2 ]]; then
+        printf_contents=$2
+    fi
+
+    if [[ "$(which bash)" != "$DEFAULT_BASH" ]]; then
+        printf -- "$printf_format" "$printf_contents"
+    fi
+
+    return "$exit"
+}
